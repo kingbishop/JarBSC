@@ -14,18 +14,21 @@ public class Tokens {
 	}
 	
 	
-	public void getTotalSupply(String contractAddress) throws Exception {
+	public String getTotalSupply(String contractAddress) throws Exception {
 		String endpoint = Endpoint.TokenUrl.urlTotalSupplyByContractAddress(contractAddress);
 		String result = HttpUtil.sendGet(endpoint);	
 		Gson gson = new Gson();
 		BscResult bscResult = gson.fromJson(result, BscResult.class);
-		System.out.println(bscResult.getResult());
+		return bscResult.getResult();
 	}
 	
 	
-	public void getTokenInfo(String contractAddress) throws Exception {
+	public String getTokenInfoPRO(String contractAddress) throws Exception {
 		String endpoint = Endpoint.TokenUrl.urlTokenInfoByContractAddress(contractAddress);
-		HttpUtil.sendGet(endpoint);
+		String result = HttpUtil.sendGet(endpoint);
+		Gson gson = new Gson();
+		BscResult bscResult = gson.fromJson(result, BscResult.class);
+		return bscResult.getResult();
 	}
 	
 }

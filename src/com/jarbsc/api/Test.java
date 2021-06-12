@@ -6,7 +6,7 @@ import com.jarbsc.api.tokens.Tokens;
 public class Test {
 	
 	public static void main(String[] args) {
-		BscAuth.setApiKey("");
+		BscAuth.setApiKey(System.getenv("APIKEY"));
 		
 		Tokens tokens = new Tokens();
 		try {

@@ -6,6 +6,16 @@ public class Endpoint {
 
 	public static final String API = "https://api.bscscan.com/api";
 	
+	
+	public static class ContractUrl {
+		
+		public static String urlGetVerifiedContractSourceCode(String contractAddress) {
+			String url = API + String.format("?module=contract&action=getsourcecode&address=%s&apikey=%s",contractAddress,BscAuth.getApiKey());
+			return url;
+		}
+		
+	}
+	
 	public static class TokenUrl {
 		
 		public static String urlTotalSupplyByContractAddress(String contractAddress) {
