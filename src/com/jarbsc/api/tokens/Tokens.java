@@ -22,6 +22,14 @@ public class Tokens {
 		return bscResult.getResult();
 	}
 	
+	public String getTotalCirculatingSupply(String contractAddress) throws Exception {
+		String endpoint = Endpoint.TokenUrl.urlTotalCirculatingSupplyByContractAddress(contractAddress);
+		String result = HttpUtil.sendGet(endpoint);	
+		Gson gson = new Gson();
+		BscResult bscResult = gson.fromJson(result, BscResult.class);
+		return bscResult.getResult();
+	}
+	
 	
 	public String getTokenInfoPRO(String contractAddress) throws Exception {
 		String endpoint = Endpoint.TokenUrl.urlTokenInfoByContractAddress(contractAddress);

@@ -31,6 +31,7 @@ public class JarBsc {
 		geth = new Geth();
 		stats = new Stats();
 		tokens = new Tokens();
+		logs = new Logs();
 		transactions = new Transactions();
 	}
 	

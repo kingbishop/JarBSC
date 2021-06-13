@@ -7,6 +7,24 @@ public class Endpoint {
 	public static final String API = "https://api.bscscan.com/api";
 	
 	
+	public static class BlockUrl {
+		
+		public static String urlGetBlockRewardByBlockNumber(String blockNumber) {
+			String url = API + String.format("?module=block&action=getblockreward&blockno=%s&apikey=%s",blockNumber,BscAuth.getApiKey());
+			return url;
+		}
+		
+	}
+	
+	public static class LogUrl {
+		
+		public static String urlGetAllEventLogsForAddress(String address) {
+			String url = API + String.format("?module=logs&action=getLogs&fromBlock=earliest&toBlock=latest&address=%s&apikey=%s", address,BscAuth.getApiKey());
+			return url;
+		}
+		
+	}
+	
 	
 	public static class AccountUrl {
 		public static String urlGetBnbBalanceForAddress(String address) {
