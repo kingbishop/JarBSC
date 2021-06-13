@@ -70,4 +70,13 @@ public class Endpoint {
 			return url;
 		}
 	}
+	
+	public static class StatsUrl {
+		
+		public static String urlGetBnbLastPrice() {
+			String url = API + String.format("?module=stats&action=bnbprice&apikey=%s",BscAuth.getApiKey());
+			return url;
+		}
+		
+	}
 }

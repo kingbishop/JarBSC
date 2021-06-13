@@ -3,6 +3,7 @@ package com.jarbsc.api;
 import com.jarbsc.api.accounts.Accounts;
 import com.jarbsc.api.auth.BscAuth;
 import com.jarbsc.api.objects.Block;
+import com.jarbsc.api.objects.PriceInfo;
 import com.jarbsc.api.tokens.Tokens;
 import com.jarbsc.api.util.EthUnit;
 
@@ -21,6 +22,11 @@ public class Test {
 			block.getTransactions().forEach((tx)->{
 				System.out.println(tx.getFrom());
 			});
+			
+			PriceInfo bnbPrices = JarBsc.api.stats().getBnbLastPrice();
+			
+			System.out.println(bnbPrices.getUsd());
+			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
