@@ -7,6 +7,15 @@ public class Endpoint {
 	public static final String API = "https://api.bscscan.com/api";
 	
 	
+	
+	public static class AccountUrl {
+		public static String urlGetBnbBalanceForAddress(String address) {
+			String url = API + String.format("?module=account&action=balance&address=%s&tag=latest&apikey=%s",address,BscAuth.getApiKey());
+			return url;
+		}
+	}
+	
+	
 	public static class ContractUrl {
 		
 		public static String urlGetVerifiedContractSourceCode(String contractAddress) {
