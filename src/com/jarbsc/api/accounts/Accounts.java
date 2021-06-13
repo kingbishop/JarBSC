@@ -3,7 +3,7 @@ package com.jarbsc.api.accounts;
 import com.google.gson.Gson;
 import com.jarbsc.api.endpoints.Endpoint;
 import com.jarbsc.api.objects.BscResult;
-import com.jarbsc.api.util.EthUnit;
+import com.jarbsc.api.util.EthConverter;
 import com.jarbsc.api.util.HttpUtil;
 
 public class Accounts {
@@ -19,7 +19,7 @@ public class Accounts {
 		BscResult bscResult = gson.fromJson(result, BscResult.class);
 		try {
 			long weiResult = Long.parseLong(bscResult.getResult());
-			return Double.toString(EthUnit.wei2eth(weiResult));
+			return Double.toString(EthConverter.wei2eth(weiResult));
 		}catch(Exception e) {
 			
 		}

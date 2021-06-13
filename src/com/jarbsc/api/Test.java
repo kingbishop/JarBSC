@@ -5,7 +5,7 @@ import com.jarbsc.api.auth.BscAuth;
 import com.jarbsc.api.objects.Block;
 import com.jarbsc.api.objects.PriceInfo;
 import com.jarbsc.api.tokens.Tokens;
-import com.jarbsc.api.util.EthUnit;
+import com.jarbsc.api.util.EthConverter;
 
 public class Test {
 	
