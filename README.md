@@ -3,6 +3,7 @@ Java wrapper around https://bscscan.com/apis
 
 The Binance Smart Chain Developer APIs are provided as a community service and without warranty, so please use what you need and no more. We support both GET/POST requests and there is a rate limit of 5 calls per sec/IP.
 
+1. To use the API service, please create a FREE Api-Key Token from within the https://bscscan.com/myapikey area, which you can then use with all your API requests.
 
 ## How To
 
@@ -20,4 +21,3 @@ BscAuth.setApiKey(System.getenv("APIKEY"));
  JarBsc.api.tokens().getTotalSupply("0xb24434065fddcdd2f4b31d8cbd6f146119b37ee1");
  ```
  
-
