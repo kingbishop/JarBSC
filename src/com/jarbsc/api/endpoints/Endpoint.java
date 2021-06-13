@@ -15,6 +15,29 @@ public class Endpoint {
 		}
 	}
 	
+	public static class GethUrl {
+		
+		public static String urlEthRecentBlockNumber() {
+			String url = String.format(API + "?module=proxy&action=eth_blockNumber&apikey=%s", BscAuth.getApiKey());
+			return url;
+		}
+		
+		public static String urlEthGetBlockByNumber(String blockNumber) {
+			String url = String.format(API + "?module=proxy&action=eth_getBlockByNumber&tag=%s&boolean=true&apikey=%s",blockNumber,BscAuth.getApiKey());
+			return url;
+		}
+		
+		public static String urlGetBlockTransactionCountByNumber(String blockNumber) {
+			String url = String.format(API + "?module=proxy&action=eth_getBlockTransactionCountByNumber&tag=%s&boolean=true&apikey=%s",blockNumber,BscAuth.getApiKey());
+			return url;
+		}
+		
+		public static String urlGetEthTransactionByHash(String txhash) {
+			String url = String.format(API + "?module=proxy&action=eth_getTransactionByHash&txhash=%s&apikey=%s",txhash,BscAuth.getApiKey());
+			return url;
+		}
+	}
+	
 	
 	public static class ContractUrl {
 		
